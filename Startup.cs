@@ -25,7 +25,7 @@ namespace vega
         public void ConfigureServices(IServiceCollection services)
         {
             //framevork services
-            services.AddDbContext<VegaDbContext>(options => options.UseSqlServer("..."));
+            services.AddDbContext<VegaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             services.AddMvc();
         }
